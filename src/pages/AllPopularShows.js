@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const AllPopularShows = () => {
   const [shows, setShows] = useState([]);
-  const navigate = useNavigate();
 
   useEffect(() => {
     fetch("https://api.themoviedb.org/3/discover/tv", {
