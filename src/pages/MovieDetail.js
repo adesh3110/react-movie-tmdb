@@ -43,22 +43,21 @@ export default function MovieDetail() {
     >
       {loading ? (
         <div className='loading'>
-          {/* <div className='animate-spin rounded-full h-32 w-32 border-t-4 border-b-4 border-gray-900'></div> */}
           <div className='max-w-4xl w-96 mx-auto flex gap-2'>
-            <div className='skeleton h-96 w-1/2'></div>
-            <div className='skeleton h-96 w-1/2'></div>
+            <div className='skeleton h-96 w-full md:w-1/2'></div>
+            <div className='skeleton h-96 w-full md:w-1/2'></div>
           </div>
         </div>
       ) : (
-        <div className='max-w-4xl rounded-lg shadow-md overflow-hidden flex'>
-          <div className='w-1/2'>
+        <div className='max-w-4xl rounded-lg shadow-md overflow-hidden flex flex-col md:flex-row'>
+          <div className='w-full md:w-1/2 md:h-1/2'>
             <img
               src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
               alt={movie.title}
-              className='w-full h-full object-cover'
+              className='w-full h-full object-cover '
             />
           </div>
-          <div className='w-1/2 p-8 flex flex-col justify-between bg-gray-200'>
+          <div className='w-full md:w-1/2 p-8 flex flex-col justify-between bg-gray-200'>
             <div>
               <h1 className='text-3xl font-bold mb-8 animate__animated animate__zoomInDown'>
                 {movie.title}
